@@ -1,0 +1,43 @@
+<resources>
+    <string name="app_name">VEG</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_maps">MapsActivity</string>
+    <string name="title_activity_sign_in">SignInActivity</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome !"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+    <string name="check_box">I understand and agree that any false or \n misleading information deny to admit me"</string>
+    <string-array name="Select_any">
+        <item>Bihar</item>
+        <item>Uttar Pradesh</item>
+        <item>Goa</item>
+        <item>Maharashtra</item>
+        <item>Madhya Pradesh</item>
+        <item>Jharkhand</item>
+        <item>Karnataka</item>
+        <item>Gujarat</item>
+        <item>Punjab</item>
+        <item>Telangana</item>
+        <item>Delhi</item>
+    </string-array>
+    <string-array name="Select_District">
+        <item>Bihar</item>
+        <item>Bihar</item>
+        <item>Bihar</item>
+        <item>Bihar</item>
+        <item>Bihar</item>
+        <item>Bihar</item>
+        <item>Bihar</item>
+    </string-array>
+    <string-array name="Select_gender">
+        <item>male</item>
+        <item>Female</item>
+        <item>Gotiya_Band</item>
+    </string-array>
+</resources>
