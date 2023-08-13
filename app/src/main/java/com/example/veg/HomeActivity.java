@@ -12,6 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.veg.Adapter.BannerAdapter;
 import com.example.veg.Adapter.BestsellerAdapter;
 import com.example.veg.Adapter.CategoryAdapter;
 import com.example.veg.Adapter.FreshVegetableAdapter;
@@ -22,6 +23,7 @@ import com.example.veg.Adapter.SpoutrsAdapter;
 import com.example.veg.Adapter.TestmonailAdapter;
 import com.example.veg.api.RetrofitClient;
 import com.example.veg.databinding.ActivityHomeBinding;
+import com.example.veg.models.BannerModel;
 import com.example.veg.models.HomeModel;
 import com.example.veg.models.LoginModel;
 import com.example.veg.models.ProfileModel;
@@ -33,7 +35,7 @@ import retrofit2.Response;
 
 
 public class HomeActivity extends AppCompatActivity {
-    RecyclerView rvDeal, rvCategory, rvFresh,rvOurBlog;
+    RecyclerView rvDeal, rvCategory, rvFresh, rvOurBlog;
     String url = "https://sabjeewala.seomantras.in/api/home";
     String accessToken;
     SessionManager sessionManager;
@@ -41,28 +43,53 @@ public class HomeActivity extends AppCompatActivity {
     TextView searchText;
     int user_id;
     ImageView ivCart;
-ActivityHomeBinding b;
+    ActivityHomeBinding b;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-       b=ActivityHomeBinding.inflate(getLayoutInflater());
-       View view = b.getRoot();
-       setContentView(view);
+        b = ActivityHomeBinding.inflate(getLayoutInflater());
+        View view = b.getRoot();
+        setContentView(view);
         sessionManager = new SessionManager(HomeActivity.this);
         loginModel = sessionManager.getLoginSession();
 
 
-      b.cartHistory.setOnClickListener(new View.OnClickListener() {
-          @Override
-          public void onClick(View view) {
-              startActivity(new Intent(HomeActivity.this, CartActivity.class));
-          }
-      });
+        b.cartHistory.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(HomeActivity.this, CartActivity.class));
+            }
+        });
 
         getProfile();
         home();
+        banner();
+    }
 
+    private void banner() {
+        Call<BannerModel> call = RetrofitClient.getInstance().getApi().banner("Bearer " + loginModel.access_token);
+        call.enqueue(new Callback<BannerModel>() {
+            @Override
+            public void onResponse(Call<BannerModel> call, Response<BannerModel> response) {
+                Log.e("banner response", new Gson().toJson(response.body()));
+                if (response.isSuccessful()) {
+
+                    BannerAdapter bannerAdapter = new BannerAdapter(response.body().banner, HomeActivity.this);
+                    b.imageSlider.setSliderAdapter(bannerAdapter);
+
+                }
+            }
+
+            @Override
+            public void onFailure(Call<BannerModel> call, Throwable t) {
+                Toast.makeText(HomeActivity.this, t.getMessage(), Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(HomeActivity.this, LoginActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+                HomeActivity.this.startActivity(intent);
+                t.printStackTrace();
+            }
+        });
     }
 
     private void getProfile() {
@@ -77,7 +104,7 @@ ActivityHomeBinding b;
                     sessionManager.setUserDetails(response.body());
                     //  Toast.makeText(getContext(), "user details", Toast.LENGTH_SHORT).show();
                     user_id = response.body().user.id;
-                  //  b.searchText.setText(response.body().user.name);
+                    //  b.searchText.setText(response.body().user.name);
                     /* pincode = response.body().user.pincode;
                    cart();
                     Glide.with(getContext()).load(response.body().user.img).into(b.ivImage);*/
@@ -86,11 +113,12 @@ ActivityHomeBinding b;
 
             @Override
             public void onFailure(Call<ProfileModel> call, Throwable t) {
-                // Toast.makeText(getContext(), t.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(HomeActivity.this, t.getMessage(), Toast.LENGTH_SHORT).show();
                 t.printStackTrace();
             }
         });
     }
+
     private void home() {
         Call<HomeModel> call = RetrofitClient.getInstance().getApi().getHome("Bearer " + loginModel.access_token);
         call.enqueue(new Callback<HomeModel>() {
@@ -98,7 +126,7 @@ ActivityHomeBinding b;
             public void onResponse(Call<HomeModel> call, Response<HomeModel> response) {
                 Log.e("responsesushil", "" + new Gson().toJson(response.body()));
                 if (response.isSuccessful()) {
-                    if (response.body().code==400) {
+                    if (response.body().code == 400) {
                         b.ok.setVisibility(View.VISIBLE);
                         b.okkf.setVisibility(View.GONE);
                         Toast.makeText(HomeActivity.this, response.body().message, Toast.LENGTH_SHORT).show();
@@ -106,7 +134,7 @@ ActivityHomeBinding b;
                     } else {
                         b.ok.setVisibility(View.GONE);
                         b.okkf.setVisibility(View.VISIBLE);
-                       // cart();
+                        // cart();
                         HomeAdapter homeAdapter = new HomeAdapter(response.body().deals, HomeActivity.this);
                         b.rvDeal.setAdapter(homeAdapter);
                         CategoryAdapter categoryAdapter = new CategoryAdapter(response.body().category, HomeActivity.this);
@@ -136,36 +164,9 @@ ActivityHomeBinding b;
                         b.testmonialRecycleview.setLayoutManager(layoutManager6);
                         b.testmonialRecycleview.setAdapter(adapter);
                     }
-
-
                 }
-            }
 
-            @Override
-            public void onFailure(Call<HomeModel> call, Throwable t) {
-                // Toast.makeText(getContext(), t.getMessage(), Toast.LENGTH_SHORT).show();
-                t.printStackTrace();
-            }
-        });
-    }
 
-/*    private void getFruit() {
-        Log.e("tkkkkkkkk",""+loginModel.access_token);
-        Call<HomeModel> call = RetrofitClient.getInstance().getApi().getHome("Bearer" + loginModel.access_token);
-        call.enqueue(new Callback<HomeModel>() {
-            @Override
-            public void onResponse(Call<HomeModel> call, Response<HomeModel> response) {
-                Log.e("response", new Gson().toJson(response.body()));
-                if (response.isSuccessful()) {
-                    HomeAdapter adapter4 = new HomeAdapter(response.body().meats, HomeActivity.this);
-                    rvCategory.setAdapter(adapter4);
-                    HomeAdapter adapter3 = new HomeAdapter(response.body().fruits, HomeActivity.this);
-                    rvOurBlog.setAdapter(adapter3);
-                    HomeAdapter adapter2 = new HomeAdapter(response.body().vegetables, HomeActivity.this);
-                    rvFresh.setAdapter(adapter2);
-                    HomeAdapter adapter1 = new HomeAdapter(response.body().deals, HomeActivity.this);
-                    rvDeal.setAdapter(adapter1);
-                }
             }
 
             @Override
@@ -174,7 +175,7 @@ ActivityHomeBinding b;
                 t.printStackTrace();
             }
         });
-    }*/
+    }
 
 
 }

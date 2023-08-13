@@ -2,6 +2,7 @@ package com.example.veg.api;
 
 
 import com.example.veg.models.AddToCartModel;
+import com.example.veg.models.BannerModel;
 import com.example.veg.models.CartListModel;
 import com.example.veg.models.DeleteCartModel;
 import com.example.veg.models.HomeModel;
@@ -32,7 +33,10 @@ public interface Api {
             @Field("confirm") String confirm,
             @Field("phone") String phone);
 
-
+    @GET("api/banners")
+    Call<BannerModel> banner(
+            @Header("Authorization") String auth
+    );
     @GET("api/home")
     Call<HomeModel> getHome(
             @Header("Authorization") String Authorization
