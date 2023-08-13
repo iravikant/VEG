@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="290dp"
+        android:layout_height="170dp"
+        app:cardCornerRadius="6dp"
+        android:layout_margin="5dp"
+        app:cardUseCompatPadding="true">
+
+        <RelativeLayout
+            android:id="@+id/rr_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <ImageView
+                android:id="@+id/imageview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scaleType="fitXY"
+                android:src="@drawable/our_blog">
+
+            </ImageView>
+
+
+
+
+
+
+            <TextView
+                android:id="@+id/txt_product"
+                android:layout_width="70dp"
+                android:layout_height="24dp"
+                android:layout_margin="10dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/orderrect"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:text="Read More"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:backgroundTint="@color/white"
+
+                app:cardCornerRadius="6dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+
+                    <TextView
+                        android:id="@+id/txt_content"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+
+                        android:layout_marginBottom="2dp"
+                        android:ellipsize="end"
+                        android:gravity="center"
+                        android:text="Dry Fruits &amp; It’s Benefits"
+                        android:textColor="#F55D2C"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+
+
+                    <TextView
+                        android:id="@+id/txt_description"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/txt_product"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginBottom="3dp"
+                        android:layout_toEndOf="@+id/txt_price"
+                        android:ellipsize="end"
+                        android:lineSpacingExtra="3dp"
+                        android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+do eiusmod tempor incididunt ut labore et"
+                        android:textColor="#757575"
+                        android:textSize="10sp"
+                        android:textStyle="bold" />
+
+                    <View
+                        android:layout_width="wrap_content"
+                        android:layout_height="1dp"
+                        android:background="#C9C4C4"></View>
+
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="4dp">
+
+                        <TextView
+                            android:id="@+id/txt_Author"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+
+                            android:ellipsize="end"
+                            android:gravity="center"
+                            android:text="Author"
+                            android:textColor="#BAC0C8"
+                            android:textSize="8sp" />
+
+                        <ImageView
+                            android:layout_width="12dp"
+                            android:layout_height="12dp"
+                            android:layout_toStartOf="@+id/txt_date"
+                            android:background="@drawable/calender">
+
+                        </ImageView>
+
+                        <TextView
+                            android:id="@+id/txt_date"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginStart="5dp"
+                            android:ellipsize="end"
+                            android:gravity="center"
+                            android:text="27/11/2022"
+                            android:textColor="#BAC0C8"
+                            android:textSize="8sp" />
+
+                    </RelativeLayout>
+
+
+                </LinearLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>

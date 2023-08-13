@@ -1,9 +1,13 @@
 package com.example.veg.api;
 
 
-import com.example.veg.HomeModel;
-import com.example.veg.LoginModel;
-import com.example.veg.SignUpModel;
+import com.example.veg.models.AddToCartModel;
+import com.example.veg.models.CartListModel;
+import com.example.veg.models.DeleteCartModel;
+import com.example.veg.models.HomeModel;
+import com.example.veg.models.LoginModel;
+import com.example.veg.models.ProfileModel;
+import com.example.veg.models.SignUpModel;
 
 import retrofit2.Call;
 import retrofit2.http.Field;
@@ -33,7 +37,31 @@ public interface Api {
     Call<HomeModel> getHome(
             @Header("Authorization") String Authorization
     );
-
+    @FormUrlEncoded
+    @POST("api/add-to-cart")
+    Call<AddToCartModel> addToCart(
+            @Header("Authorization") String auth,
+            @Field("user_id") String user_id,
+            @Field("product_id") String product_id,
+            @Field("quantity") int quantity
+    );
+    @FormUrlEncoded
+    @POST("api/cart-list")
+    Call<CartListModel> cartList(
+            @Header("Authorization") String auth,
+            @Field("user_id") String user_id
+    );
+    @GET("api/loggeduser")
+    Call<ProfileModel> myProfile(
+            @Header("Authorization") String auth
+    );
+    @FormUrlEncoded
+    @POST("api/remove-from-cart")
+    Call<DeleteCartModel> delete(
+            @Header("Authorization") String auth,
+            @Field("user_id") String user_id,
+            @Field("product_id") String product_id
+    );
 
 
 }

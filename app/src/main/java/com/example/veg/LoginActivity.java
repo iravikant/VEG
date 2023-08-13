@@ -14,6 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.veg.api.RetrofitClient;
 import com.example.veg.databinding.ActivityLoginBinding;
+import com.example.veg.models.LoginModel;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
@@ -34,12 +35,14 @@ public class LoginActivity extends AppCompatActivity {
     GoogleSignInClient sgn;
     ImageView ggl;
     ActivityLoginBinding b;
+    SessionManager sessionManager;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        sessionManager=new SessionManager(LoginActivity.this);
 
         ggl = findViewById(R.id.ggl);
 
@@ -110,12 +113,15 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onResponse(retrofit2.Call<LoginModel> call, Response<LoginModel> response) {
                 Log.e("Token", new Gson().toJson(response.body()));
-                if (response.isSuccessful()) {
-                    Toast.makeText(LoginActivity.this, "Login successfully", Toast.LENGTH_SHORT).show();
+                int statusCode = response.code();
+                if (statusCode == 200) {
+                    sessionManager.createLoginSession(response.body());
+                    Toast.makeText(LoginActivity.this, "Login Successfully", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
-                    intent.putExtra("token",response.body().access_token);
                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
                     startActivity(intent);
+                } else {
+                    Toast.makeText(LoginActivity.this, "something went wrong", Toast.LENGTH_SHORT).show();
 
                 }
             }

@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+            <ImageView
+                android:id="@+id/imageview"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/mengo">
+
+            </ImageView>
+
+<TextView
+    android:id="@+id/textview_1"
+    android:layout_toEndOf="@+id/imageview"
+    android:layout_width="wrap_content"
+    android:layout_margin="15dp"
+    android:text="Mango"
+    android:textColor="@color/black"
+    android:textStyle="bold"
+    android:textSize="14sp"
+    android:layout_height="wrap_content">
+
+
+</TextView>
+
+            <TextView
+                android:id="@+id/textview_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textview_1"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="15dp"
+                android:layout_toEndOf="@+id/imageview"
+                android:text="₹80 "
+                android:textColor="#1CA301"
+                android:textSize="18sp"
+                android:textStyle="bold">
+
+
+            </TextView>
+<TextView
+    android:id="@+id/textview_3"
+    android:layout_below="@+id/textview_1"
+    android:layout_toEndOf="@+id/textview_2"
+    android:layout_width="wrap_content"
+    android:layout_marginTop="17dp"
+    android:text=" ₹100 "
+    android:textColor="#757575"
+    android:textStyle="bold"
+    android:layout_marginStart="10dp"
+    android:textSize="14sp"
+    android:layout_height="wrap_content">
+
+
+</TextView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardview"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_below="@+id/textview_1"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="15dp"
+                android:layout_toEndOf="@+id/textview_3"
+                android:backgroundTint="#D11F1B">
+
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="3dp"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/minusicone"
+                    android:textColor="@color/white"
+                    android:textSize="14sp">
+
+                </TextView>
+
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/text_one"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textview_1"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="15dp"
+                android:layout_toEndOf="@+id/cardview"
+                android:text="1"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:textStyle="bold">
+
+            </TextView>
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardview1"
+
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_below="@+id/textview_1"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="15dp"
+                android:layout_toEndOf="@+id/text_one"
+                android:backgroundTint="#1CA301">
+
+                <TextView
+                    android:layout_width="6dp"
+                    android:layout_height="6dp"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/plusicone"
+                    android:textColor="@color/white"
+                    android:textSize="14sp">
+
+                </TextView>
+
+
+            </androidx.cardview.widget.CardView>
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardview5"
+                android:layout_toEndOf="@+id/cardview1"
+                 android:layout_marginStart="10dp"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_below="@+id/textview_1"
+                android:layout_marginTop="15dp"
+                android:backgroundTint="#33FC3C37">
+
+            <ImageView
+                android:id="@+id/delicone"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_below="@+id/textview_1"
+                android:layout_toEndOf="@+id/cardview1"
+                android:background="@drawable/delete">
+
+            </ImageView>
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardview4"
+                android:layout_toEndOf="@+id/cardview5"
+                android:layout_marginStart="10dp"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_below="@+id/textview_1"
+                android:layout_marginTop="15dp"
+                android:backgroundTint="#CCE1D9">
+
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_below="@+id/textview_1"
+                android:layout_toEndOf="@+id/delicone"
+                android:background="@drawable/grrncart"/>
+
+
+            </androidx.cardview.widget.CardView>
+            <View
+                android:layout_below="@+id/imageview"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/line">
+
+            </View>
+
+
+        </RelativeLayout>
+
+</RelativeLayout>

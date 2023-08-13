@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingEnd="15dp"
+    android:layout_alignParentStart="true"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardview"
+        android:layout_width="144dp"
+        android:layout_height="150dp"
+        android:backgroundTint="#D9D9D9"
+        app:cardCornerRadius="6dp"
+        app:cardUseCompatPadding="true">
+
+        <RelativeLayout
+            android:id="@+id/rr_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardview_1"
+                android:layout_width="50dp"
+                android:layout_height="25dp"
+                android:layout_marginStart="90dp"
+                android:backgroundTint="@color/white"
+                app:cardCornerRadius="6dp"
+                app:cardUseCompatPadding="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+
+                    <ImageView
+                        android:layout_width="10dp"
+                        android:layout_height="9dp"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/cartimage">
+
+
+                    </ImageView>
+
+                    <ImageView
+                        android:layout_width="10dp"
+                        android:layout_height="9dp"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/hratr_1">
+
+
+                    </ImageView>
+                </LinearLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+
+            <ImageView
+                android:id="@+id/img_product"
+                android:layout_width="144dp"
+                android:layout_height="80dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/bestsellerimage"
+                android:scaleType="fitXY" />
+
+
+            <ImageView
+                android:id="@+id/star"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_below="@+id/img_product"
+                android:layout_marginStart="5dp"
+                android:background="@drawable/starimage">
+
+            </ImageView>
+
+            <ImageView
+                android:id="@+id/star_1"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_below="@+id/img_product"
+                android:layout_marginStart="5dp"
+                android:layout_toEndOf="@+id/star"
+                android:background="@drawable/starimage">
+
+            </ImageView>
+
+            <ImageView
+                android:id="@+id/star_2"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_below="@+id/img_product"
+                android:layout_marginStart="5dp"
+                android:layout_toEndOf="@+id/star_1"
+                android:background="@drawable/starimage">
+
+            </ImageView>
+
+            <ImageView
+                android:id="@+id/star_3"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_below="@+id/img_product"
+                android:layout_marginStart="5dp"
+                android:layout_toEndOf="@+id/star_2"
+                android:background="@drawable/starimage">
+
+            </ImageView>
+
+            <ImageView
+                android:id="@+id/star_4"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_below="@+id/img_product"
+                android:layout_marginStart="5dp"
+                android:layout_toEndOf="@+id/star_3"
+                android:background="@drawable/whitestar">
+
+            </ImageView>
+
+
+            <TextView
+                android:id="@+id/txt_product"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/star"
+                android:layout_marginStart="5dp"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:text="Rambutan"
+                android:textColor="#A1000F"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txt_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txt_product"
+                android:layout_marginStart="5dp"
+                android:ellipsize="end"
+                android:text="Rs. 50/-"
+                android:textColor="#4C9A2A"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/txt_price1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txt_product"
+                android:layout_marginStart="5dp"
+                android:layout_toEndOf="@+id/txt_price"
+                android:ellipsize="end"
+                android:text="Rs. 80/-"
+                android:textColor="#656565"
+                android:textSize="10sp" />
+
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</RelativeLayout>

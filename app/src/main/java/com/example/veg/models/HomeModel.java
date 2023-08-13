@@ -1,4 +1,4 @@
-package com.example.veg;
+package com.example.veg.models;
 
 
 import android.os.Parcel;
