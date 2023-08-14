@@ -79,10 +79,10 @@ public class CartActivity extends AppCompatActivity {
                             }
                         });
                     b.rvCart.setAdapter(cartAdapter);
-                       b.tvTotal.setText(String.valueOf("Rs. " + response.body().total));
-                        b.tvSubTotal.setText(String.valueOf("Rs. " + response.body().subTotal));
-                        b.tvTotalTaxes.setText(String.valueOf("Rs. " + response.body().totalTax));
-                        b.tvTotalView.setText(String.valueOf("Rs. " + response.body().total));
+                       b.tvTotal.setText(String.valueOf("₹ " + response.body().total));
+                        b.tvSubTotal.setText(String.valueOf("₹ " + response.body().subTotal));
+                        b.tvTotalTaxes.setText(String.valueOf("₹ " + response.body().totalTax));
+                        b.tvTotalView.setText(String.valueOf("₹ " + response.body().total));
 //                        b.totalItem.setText(String.valueOf("Subtotal ( " + response.body().cart.get(0).quantity) + " items)");
 //
 //                       b.address.setOnClickListener(new View.OnClickListener() {

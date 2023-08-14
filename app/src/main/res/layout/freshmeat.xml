@@ -71,50 +71,8 @@
                     android:textColor="#1CA301"
                     android:textSize="10sp"
                   />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         </RelativeLayout>
     </androidx.cardview.widget.CardView>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 <LinearLayout
     android:layout_below="@+id/cardview"
@@ -130,7 +88,6 @@
         android:backgroundTint="#2D5F2E"
         >
 
-
 <TextView
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
@@ -140,20 +97,7 @@
     android:layout_marginStart="10dp"
     android:layout_marginTop="5dp"
     android:gravity="center">
-
-
 </TextView>
-
-
-
-
-
-
-
-
-
-
-
 
     </androidx.cardview.widget.CardView>
 
@@ -163,8 +107,7 @@
         android:layout_width="20dp"
         android:layout_height="20dp"
         android:layout_marginStart="5dp"
-        android:backgroundTint="#4C9A2A"
-        >
+        android:backgroundTint="#4C9A2A">
 
     <ImageView
         android:id="@+id/image_hert"

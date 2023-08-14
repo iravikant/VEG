@@ -6,6 +6,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -15,11 +16,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.veg.ProductDetailsActivity;
+import com.example.veg.R;
 import com.example.veg.SessionManager;
 import com.example.veg.api.RetrofitClient;
 import com.example.veg.models.AddToCartModel;
 import com.example.veg.models.HomeModel;
-import com.example.veg.R;
 import com.example.veg.models.LoginModel;
 import com.example.veg.models.ProfileModel;
 import com.google.gson.Gson;
@@ -40,10 +41,9 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.MyViewHolder> 
         this.context = context;
     }
 
-
     @Override
     public HomeAdapter.MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.home_item, parent, false);
+        View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.deal_of_the_day_item, parent, false);
         return new HomeAdapter.MyViewHolder(itemView);
     }
 
@@ -55,7 +55,7 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.MyViewHolder> 
         holder.tvName.setText(faqList.get(position).name);
         holder.tvPrice.setText(String.valueOf("Rs."+ faqList.get(position).selling_price +" /"+faqList.get(position).product_unit));
         holder.tvDiscount.setText(String.valueOf("Rs."+(faqList.get(position).mrp)));
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
+        holder.llfv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent=new Intent(context, ProductDetailsActivity.class);
@@ -67,10 +67,10 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.MyViewHolder> 
             @Override
             public void onClick(View view) {
                 SessionManager sessionManager = new SessionManager(context);
-                LoginModel loginModel = sessionManager.getLoginSession();
+                LoginModel sessionModel = sessionManager.getLoginSession();
                 ProfileModel profileModel = sessionManager.getUser();
                 String user_id = String.valueOf(profileModel.user.id);
-                Call<AddToCartModel> call = RetrofitClient.getInstance().getApi().addToCart("Bearer " + loginModel.access_token, String.valueOf(user_id), String.valueOf(faqList.get(position).id),1);
+                Call<AddToCartModel> call = RetrofitClient.getInstance().getApi().addToCart("Bearer " + sessionModel.access_token, String.valueOf(user_id), String.valueOf(faqList.get(position).id),1);
                 call.enqueue(new Callback<AddToCartModel>() {
                     @Override
                     public void onResponse(Call<AddToCartModel> call, Response<AddToCartModel> response) {
@@ -89,7 +89,7 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.MyViewHolder> 
             }
 
         });
-       /* holder.ivAddToWishList.setOnClickListener(new View.OnClickListener() {
+     /*   holder.ivAddToWishList.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 holder.ivAddToWishList.setImageResource(R.drawable.like_red);
@@ -132,12 +132,13 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.MyViewHolder> 
         MyViewHolder(View itemView) {
             super(itemView);
 
-            ivImage = itemView.findViewById(R.id.ivPro);
-            tvName = itemView.findViewById(R.id.tvProName);
-            tvPrice = itemView.findViewById(R.id.tvMrp);
-            tvDiscount = itemView.findViewById(R.id.tvDescription);
-            ivAddToCart = itemView.findViewById(R.id.ivBtn);
-
+            ivImage = itemView.findViewById(R.id.ivImage);
+            tvName = itemView.findViewById(R.id.tvName);
+            tvPrice = itemView.findViewById(R.id.tvPrice);
+            tvDiscount = itemView.findViewById(R.id.tvDiscount);
+            llfv = itemView.findViewById(R.id.llfv);
+            ivAddToCart = itemView.findViewById(R.id.ivAddToCart);
+            ivAddToWishList = itemView.findViewById(R.id.ivAddToWishList);
 
 
         }

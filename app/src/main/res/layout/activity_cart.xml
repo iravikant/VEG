@@ -104,7 +104,7 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/tvDelivery"
+
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="10dp"
@@ -113,6 +113,7 @@
                     android:textStyle="bold" />
 
                 <TextView
+                    android:id="@+id/tvDelivery"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="10dp"
@@ -126,7 +127,7 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/tvTotalTaxes"
+
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="10dp"
@@ -135,6 +136,7 @@
                     android:textStyle="bold" />
 
                 <TextView
+                    android:id="@+id/tvTotalTaxes"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="10dp"
@@ -148,7 +150,7 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/tvDiscount"
+
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="10dp"
@@ -157,6 +159,7 @@
                     android:textStyle="bold" />
 
                 <TextView
+                    android:id="@+id/tvDiscount"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="10dp"
@@ -176,7 +179,7 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/tvTotal"
+
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="10dp"
@@ -185,6 +188,7 @@
                     android:textStyle="bold" />
 
                 <TextView
+                    android:id="@+id/tvTotal"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="10dp"
