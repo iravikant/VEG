@@ -61,8 +61,14 @@ public class HomeActivity extends AppCompatActivity {
                 startActivity(new Intent(HomeActivity.this, CartActivity.class));
             }
         });
+        b.navigation.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(HomeActivity.this, ProfileActivity.class));
+            }
+        });
 
-        getProfile();
+//        getProfile();
         home();
         banner();
     }
@@ -92,7 +98,7 @@ public class HomeActivity extends AppCompatActivity {
         });
     }
 
-    private void getProfile() {
+  /*  private void getProfile() {
 
 
         Call<ProfileModel> call = RetrofitClient.getInstance().getApi().myProfile("Bearer " + loginModel.access_token);
@@ -105,9 +111,9 @@ public class HomeActivity extends AppCompatActivity {
                     //  Toast.makeText(getContext(), "user details", Toast.LENGTH_SHORT).show();
                     user_id = response.body().user.id;
                     //  b.searchText.setText(response.body().user.name);
-                    /* pincode = response.body().user.pincode;
+                    *//* pincode = response.body().user.pincode;
                    cart();
-                    Glide.with(getContext()).load(response.body().user.img).into(b.ivImage);*/
+                    Glide.with(getContext()).load(response.body().user.img).into(b.ivImage);*//*
                 }
             }
 
@@ -117,7 +123,7 @@ public class HomeActivity extends AppCompatActivity {
                 t.printStackTrace();
             }
         });
-    }
+    }*/
 
     private void home() {
         Call<HomeModel> call = RetrofitClient.getInstance().getApi().getHome("Bearer " + loginModel.access_token);
@@ -176,6 +182,5 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
     }
-
 
 }

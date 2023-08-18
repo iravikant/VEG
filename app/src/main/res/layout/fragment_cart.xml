@@ -205,42 +205,42 @@
         app:cardCornerRadius="8dp"
         app:cardElevation="10dp">
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="10dp"
-        android:orientation="vertical">
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:foreground="@drawable/not"
-        android:text="₹600" />
-
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:layout_marginHorizontal="10dp"
+            android:orientation="vertical">
 
             <TextView
-                android:id="@+id/tvTotalView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="₹400"
-                android:textSize="18dp"
-                android:textStyle="bold" />
+                android:foreground="@drawable/not"
+                android:text="₹600" />
 
-            <ImageButton
-                android:id="@+id/tvPriceInfo"
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:background="@color/white"
-                android:padding="5dp"
-                android:src="@drawable/exclamation_round_line_icon" />
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tvTotalView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="₹400"
+                    android:textSize="18dp"
+                    android:textStyle="bold" />
+
+                <ImageButton
+                    android:id="@+id/tvPriceInfo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@color/white"
+                    android:padding="5dp"
+                    android:src="@drawable/exclamation_round_line_icon" />
+            </LinearLayout>
         </LinearLayout>
-    </LinearLayout>
         <com.google.android.material.button.MaterialButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -250,6 +250,6 @@
             android:textStyle="bold"
             android:layout_margin="10dp"
             style="@style/Widget.Material3.CardView.Outlined"/>
-</androidx.cardview.widget.CardView>
+    </androidx.cardview.widget.CardView>
 
-    </LinearLayout>
+</LinearLayout>

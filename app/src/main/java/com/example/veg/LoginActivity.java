@@ -31,9 +31,9 @@ public class LoginActivity extends AppCompatActivity {
     String phone = "";
     String password = "";
     TextView tvSignUp;
-    GoogleSignInOptions lgn;
+   /* GoogleSignInOptions lgn;
     GoogleSignInClient sgn;
-    ImageView ggl;
+    ImageView ggl;*/
     ActivityLoginBinding b;
     SessionManager sessionManager;
 
@@ -43,11 +43,13 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         sessionManager=new SessionManager(LoginActivity.this);
+/*
 
         ggl = findViewById(R.id.ggl);
 
         lgn = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).requestEmail().build();
         sgn = GoogleSignIn.getClient(this, lgn);
+*/
 
         etPhone = findViewById(R.id.etPhone);
         etPassword = findViewById(R.id.etPassword);
@@ -59,13 +61,13 @@ public class LoginActivity extends AppCompatActivity {
                 startActivity(new Intent(LoginActivity.this,RegistrationActivity.class));
             }
         });
-        ggl.setOnClickListener(new View.OnClickListener() {
+       /* ggl.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 signIn();
             }
 
-        });
+        });*/
         subBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -134,8 +136,8 @@ public class LoginActivity extends AppCompatActivity {
     }
 
 
-    private void signIn() {
+  /*  private void signIn() {
         Intent signInIntent = sgn.getSignInIntent();
         startActivityForResult(signInIntent, 1000);
-    }
+    }*/
 }

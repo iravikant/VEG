@@ -16,6 +16,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.example.veg.CartQuantityListener;
 import com.example.veg.R;
+import com.example.veg.RemoveCartFragment;
 import com.example.veg.RemoveCartListener;
 import com.example.veg.SessionManager;
 import com.example.veg.api.RetrofitClient;
@@ -63,11 +64,11 @@ public class WishlistAdapter extends RecyclerView.Adapter<WishlistAdapter.MyView
         holder.tvName.setText(model.product.name);
         holder.tvPrice.setText("Rs." + (model.product.selling_price * model.quantity));
         holder.tvDiscount.setText("Rs." + (model.product.mrp) * model.quantity);
-  /*      holder.nsStepper.setOnValueChangedListener(null);
+      holder.nsStepper.setOnValueChangedListener(null);
         holder.nsStepper.setValue(model.quantity);
-        holder.nsStepper.setOnValueChangedListener(new com.webdigitalmantra.sabjeewala.NumberStepper.OnValueChangedListener() {
+        holder.nsStepper.setOnValueChangedListener(new ezy.ui.view.NumberStepper.OnValueChangedListener() {
             @Override
-            public void onValueChanged(com.webdigitalmantra.sabjeewala.NumberStepper view, int value) {
+            public void onValueChanged(ezy.ui.view.NumberStepper view, int value) {
                 Log.e("sushilvalue", String.valueOf(value));
                 cartQuantityListener.onQuantityChanged(String.valueOf(model.product_id), value);
             }
@@ -83,7 +84,7 @@ public class WishlistAdapter extends RecyclerView.Adapter<WishlistAdapter.MyView
                     }
                 }).show(((AppCompatActivity) context).getSupportFragmentManager(), "remove_cart_fragment");
             }
-        });*/
+        });
         holder.ivAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

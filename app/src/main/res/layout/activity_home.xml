@@ -138,22 +138,22 @@
 
                 </LinearLayout>
                 <com.smarteist.autoimageslider.SliderView
-                         android:id="@+id/imageSlider"
-                         android:layout_width="match_parent"
-                         android:layout_height="150dp"
-                         app:sliderAnimationDuration="600"
-                         app:sliderAutoCycleDirection="back_and_forth"
-                         app:sliderAutoCycleEnabled="true"
-                         app:sliderIndicatorAnimationDuration="600"
-                         app:sliderIndicatorGravity="center_horizontal|bottom"
-                         app:sliderIndicatorMargin="15dp"
-                         app:sliderIndicatorOrientation="horizontal"
-                         app:sliderIndicatorPadding="3dp"
-                         app:sliderIndicatorRadius="2dp"
-                         app:sliderIndicatorSelectedColor="#5A5A5A"
-                         app:sliderIndicatorUnselectedColor="#FFF"
-                         app:sliderScrollTimeInSec="1"
-                         app:sliderStartAutoCycle="true" />
+                    android:id="@+id/imageSlider"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    app:sliderAnimationDuration="600"
+                    app:sliderAutoCycleDirection="back_and_forth"
+                    app:sliderAutoCycleEnabled="true"
+                    app:sliderIndicatorAnimationDuration="600"
+                    app:sliderIndicatorGravity="center_horizontal|bottom"
+                    app:sliderIndicatorMargin="15dp"
+                    app:sliderIndicatorOrientation="horizontal"
+                    app:sliderIndicatorPadding="3dp"
+                    app:sliderIndicatorRadius="2dp"
+                    app:sliderIndicatorSelectedColor="#5A5A5A"
+                    app:sliderIndicatorUnselectedColor="#FFF"
+                    app:sliderScrollTimeInSec="1"
+                    app:sliderStartAutoCycle="true" />
 
 
                 <LinearLayout
@@ -591,7 +591,7 @@
                                 android:gravity="center"
                                 android:text="Explore More.."
                                 android:textColor="@color/black"
-                                android:textSize="12sp"></TextView>
+                                android:textSize="12sp"/>
 
 
                         </androidx.cardview.widget.CardView>
@@ -636,10 +636,7 @@
                                     android:text="Fresh Meat"
                                     android:textColor="@color/black"
                                     android:textSize="20dp"
-                                    android:textStyle="bold">
-
-                                </TextView>
-
+                                    android:textStyle="bold"/>
                                 <TextView
                                     android:id="@+id/tvMeat"
                                     android:layout_width="wrap_content"
@@ -652,10 +649,7 @@
                                     android:text="View More"
                                     android:textColor="#2D5F2E"
                                     android:textSize="15dp"
-                                    android:textStyle="bold">
-
-                                </TextView>
-
+                                    android:textStyle="bold"/>
 
                                 <androidx.recyclerview.widget.RecyclerView
                                     android:id="@+id/freshmeatRecycleview"
@@ -686,9 +680,7 @@
                                     android:text="Best Seller"
                                     android:textColor="@color/black"
                                     android:textSize="20dp"
-                                    android:textStyle="bold">
-
-                                </TextView>
+                                    android:textStyle="bold"/>
 
                                 <TextView
                                     android:id="@+id/tvSeller"
@@ -702,9 +694,7 @@
                                     android:text="View More"
                                     android:textColor="#2D5F2E"
                                     android:textSize="15dp"
-                                    android:textStyle="bold">
-
-                                </TextView>
+                                    android:textStyle="bold"/>
 
 
                                 <androidx.recyclerview.widget.RecyclerView
@@ -739,9 +729,7 @@
                                     android:textAllCaps="true"
                                     android:textColor="#2D5F2E"
                                     android:textSize="20dp"
-                                    android:textStyle="bold">
-
-                                </TextView>
+                                    android:textStyle="bold"/>
 
                                 <androidx.recyclerview.widget.RecyclerView
                                     android:id="@+id/testmonialRecycleview"
@@ -773,9 +761,7 @@
                                     android:textAllCaps="true"
                                     android:textColor="#2D5F2E"
                                     android:textSize="20dp"
-                                    android:textStyle="bold">
-
-                                </TextView>
+                                    android:textStyle="bold"/>
 
                                 <androidx.recyclerview.widget.RecyclerView
                                     android:id="@+id/rvOurBlog"
@@ -792,9 +778,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="80dp"
                                 android:background="@drawable/bottomarect"
-                                android:orientation="horizontal"
-
-                                >
+                                android:orientation="horizontal">
 
                                 <LinearLayout
                                     android:layout_width="130dp"
@@ -809,9 +793,7 @@
                                         android:layout_height="20dp"
                                         android:layout_marginStart="5dp"
                                         android:layout_marginTop="5dp"
-                                        android:background="@drawable/callicone">
-
-                                    </ImageView>
+                                        android:background="@drawable/callicone"/>
 
                                     <TextView
                                         android:layout_width="wrap_content"
@@ -829,43 +811,32 @@
                                     android:layout_height="wrap_content"
                                     android:orientation="horizontal"
                                     android:visibility="gone">
-
+                                    <ImageView
+                                        android:layout_width="40dp"
+                                        android:layout_height="40dp"
+                                        android:layout_marginStart="5dp"
+                                        android:layout_marginTop="5dp"
+                                        android:background="@drawable/fbicone"/>
 
                                     <ImageView
                                         android:layout_width="40dp"
                                         android:layout_height="40dp"
                                         android:layout_marginStart="5dp"
                                         android:layout_marginTop="5dp"
-                                        android:background="@drawable/fbicone">
-
-                                    </ImageView>
+                                        android:background="@drawable/youtubeicone"/>
 
                                     <ImageView
                                         android:layout_width="40dp"
                                         android:layout_height="40dp"
                                         android:layout_marginStart="5dp"
                                         android:layout_marginTop="5dp"
-                                        android:background="@drawable/youtubeicone">
-
-                                    </ImageView>
-
+                                        android:background="@drawable/twitter"/>
                                     <ImageView
                                         android:layout_width="40dp"
                                         android:layout_height="40dp"
                                         android:layout_marginStart="5dp"
                                         android:layout_marginTop="5dp"
-                                        android:background="@drawable/twitter">
-
-                                    </ImageView>
-
-                                    <ImageView
-                                        android:layout_width="40dp"
-                                        android:layout_height="40dp"
-                                        android:layout_marginStart="5dp"
-                                        android:layout_marginTop="5dp"
-                                        android:background="@drawable/instaicone">
-
-                                    </ImageView>
+                                        android:background="@drawable/instaicone"/>
 
                                     <ImageView
                                         android:layout_width="40dp"
@@ -873,31 +844,52 @@
                                         android:layout_marginStart="5dp"
                                         android:layout_marginTop="5dp"
                                         android:background="@drawable/linked">
-
                                     </ImageView>
-
-
                                 </LinearLayout>
-
-
                             </LinearLayout>
-
-
                         </LinearLayout>
-
-
                     </androidx.core.widget.NestedScrollView>
-
-
                 </LinearLayout>
-
-
             </LinearLayout>
         </androidx.core.widget.NestedScrollView>
     </FrameLayout>
-
-
 </LinearLayout>
+
+
+
+
+<!--<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".HomeActivity">
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fgHome"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        app:defaultNavHost="true"
+        app:navGraph="@navigation/bottom" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="#F392BD"
+        app:itemIconSize="20dp"
+        app:itemIconTint="#EA1212"
+        app:itemPaddingBottom="8dp"
+        app:itemTextColor="@color/white"
+        app:labelVisibilityMode="selected"
+        app:layout_anchor="@id/fgHome"
+        app:layout_anchorGravity="bottom"
+        app:menu="@menu/bottom_navigation_menu" />
+</LinearLayout>-->
 
 
 

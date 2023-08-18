@@ -1,6 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/bottom">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/bottom"
+    app:startDestination="@id/navHome">
+    <fragment
+        android:id="@+id/navHome"
+        android:name="com.example.veg.HomeFragment"
+        android:label="fragment_tickets"
+        tools:layout="@layout/activity_home" />
+    <fragment
+        android:id="@+id/navWishlist"
+        android:name="com.example.veg.HomeFragment"
+        android:label="fragment_tickets"
+       tools:layout="@layout/activity_wish_list"/>
+    <fragment
+        android:id="@+id/navCart"
+        android:name="com.example.veg.HomeFragment"
+        android:label="fragment_tickets"
+       tools:layout="@layout/activity_cart"/>
+    <fragment
+        android:id="@+id/navProfile"
+        android:name="com.example.veg.HomeFragment"
+        android:label="fragment_tickets"
+        tools:layout="@layout/activity_product_list"/>
 
 </navigation>
