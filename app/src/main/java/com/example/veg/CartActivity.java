@@ -1,8 +1,10 @@
 package com.example.veg;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -26,6 +28,7 @@ public class CartActivity extends AppCompatActivity {
     SessionManager sessionManager;
     LoginModel loginModel;
     ProfileModel profileModel;
+    ImageView ivWishlist;
     int user_id;
 
     @Override
@@ -37,6 +40,7 @@ public class CartActivity extends AppCompatActivity {
         sessionManager = new SessionManager(CartActivity.this);
         loginModel = sessionManager.getLoginSession();
         profileModel = sessionManager.getUser();
+        ivWishlist = findViewById(R.id.ivWishlist);
 
 
         b.back.setNavigationOnClickListener(new View.OnClickListener() {
@@ -47,6 +51,12 @@ public class CartActivity extends AppCompatActivity {
         });
         user_id = profileModel.user.id;
         cart();
+        ivWishlist.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(CartActivity.this,WishListActivity.class));
+            }
+        });
     }
 
     private void cart() {

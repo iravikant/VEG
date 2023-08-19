@@ -8,6 +8,7 @@ import android.util.Log;
 import com.example.veg.models.CartListModel;
 import com.example.veg.models.LoginModel;
 import com.example.veg.models.ProfileModel;
+import com.example.veg.models.WishlistModel;
 import com.google.gson.Gson;
 
 public class SessionManager {
@@ -96,6 +97,12 @@ public class SessionManager {
 
     public void setFirstTimeLaunch(boolean isFirstTime) {
         editor.putBoolean(KEY_FIRST_TIME, isFirstTime);
+        editor.commit();
+    }
+
+    public void setWishlistList(WishlistModel wishlistModel) {
+        Log.e("sushilCartttttt", new Gson().toJson(wishlistModel));
+        editor.putString(KEY_CART_LIST, new Gson().toJson(wishlistModel));
         editor.commit();
     }
 

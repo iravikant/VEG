@@ -9,6 +9,7 @@ import com.example.veg.models.HomeModel;
 import com.example.veg.models.LoginModel;
 import com.example.veg.models.ProfileModel;
 import com.example.veg.models.SignUpModel;
+import com.example.veg.models.WishlistModel;
 
 import retrofit2.Call;
 import retrofit2.http.Field;
@@ -66,6 +67,11 @@ public interface Api {
             @Field("user_id") String user_id,
             @Field("product_id") String product_id
     );
-
+@FormUrlEncoded
+    @POST("api/wishlist")
+    Call<WishlistModel> add(
+        @Header("Authorization") String auth,
+        @Field("user_id") String user_id
+);
 
 }

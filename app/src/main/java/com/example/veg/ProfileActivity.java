@@ -21,7 +21,7 @@ import retrofit2.Response;
 
 public class ProfileActivity extends AppCompatActivity {
 ImageView ivProfile;
-TextView tvName;
+TextView tvName,tvPhone,tvEmail,tvAge,tvGender,tvAddress;
 MaterialButton mbEdit;
 SessionManager sessionManager;
 LoginModel loginModel;
@@ -32,6 +32,11 @@ LoginModel loginModel;
         sessionManager=new SessionManager(ProfileActivity.this);
         loginModel= sessionManager.getLoginSession();
         tvName = findViewById(R.id.tvName);
+        tvGender = findViewById(R.id.tvGender);
+        tvAge = findViewById(R.id.tvAge);
+        tvEmail = findViewById(R.id.tvEmail);
+        tvPhone = findViewById(R.id.tvPhone);
+        tvAddress = findViewById(R.id.tvAddress);
         ivProfile = findViewById(R.id.ivProfile);
         mbEdit = findViewById(R.id.mbEdit);
               getProfile();
@@ -47,8 +52,13 @@ LoginModel loginModel;
                 if (response.isSuccessful()) {
                     sessionManager.setUserDetails(response.body());
                     tvName.setText(response.body().user.name);
+                    tvAge.setText(response.body().user.age);
+                    tvGender.setText(response.body().user.gender);
+                    tvPhone.setText(response.body().user.phone);
+                    tvEmail.setText(response.body().user.email);
+                    tvAddress.setText(response.body().user.address);
 
-                    Glide.with(ProfileActivity.this).load(response.body().user.img).into(ivProfile);
+//                    Glide.with(ProfileActivity.this).load(response.body().user.img).into(ivProfile);
                 }
             }
 
