@@ -6,6 +6,7 @@ import android.content.SharedPreferences;
 import android.util.Log;
 
 import com.example.veg.models.CartListModel;
+import com.example.veg.models.EditProfileModel;
 import com.example.veg.models.LoginModel;
 import com.example.veg.models.ProfileModel;
 import com.example.veg.models.WishlistModel;
@@ -106,4 +107,6 @@ public class SessionManager {
         editor.commit();
     }
 
+    public void setProfileDetails(EditProfileModel body) {
+    }
 }

@@ -5,6 +5,7 @@ import com.example.veg.models.AddToCartModel;
 import com.example.veg.models.BannerModel;
 import com.example.veg.models.CartListModel;
 import com.example.veg.models.DeleteCartModel;
+import com.example.veg.models.EditProfileModel;
 import com.example.veg.models.HomeModel;
 import com.example.veg.models.LoginModel;
 import com.example.veg.models.ProfileModel;
@@ -74,4 +75,10 @@ public interface Api {
         @Field("user_id") String user_id
 );
 
+    @FormUrlEncoded
+    @POST("api/update-profile/1")
+    Call<EditProfileModel> edit(
+            @Header("Authorization") String auth
+
+    );
 }

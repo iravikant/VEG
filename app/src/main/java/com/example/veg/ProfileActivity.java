@@ -2,8 +2,10 @@ package com.example.veg;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -40,7 +42,16 @@ LoginModel loginModel;
         ivProfile = findViewById(R.id.ivProfile);
         mbEdit = findViewById(R.id.mbEdit);
               getProfile();
+
+
+              mbEdit.setOnClickListener(new View.OnClickListener() {
+                  @Override
+                  public void onClick(View view) {
+                      startActivity(new Intent(ProfileActivity.this,EditProfileActivity.class));
+                  }
+              });
     }
+
     private void getProfile() {
 
 
@@ -58,7 +69,7 @@ LoginModel loginModel;
                     tvEmail.setText(response.body().user.email);
                     tvAddress.setText(response.body().user.address);
 
-//                    Glide.with(ProfileActivity.this).load(response.body().user.img).into(ivProfile);
+                   Glide.with(ProfileActivity.this).load(response.body().user.img).into(ivProfile);
                 }
             }
 

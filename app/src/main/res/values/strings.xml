@@ -36,7 +36,8 @@
         <item>Bihar</item>
     </string-array>
     <string-array name="Select_gender">
-        <item>male</item>
+        <item>Select AnyOne</item>
+        <item>Male</item>
         <item>Female</item>
         <item>Gotiya_Band</item>
     </string-array>
