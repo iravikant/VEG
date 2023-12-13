@@ -11,7 +11,7 @@
     <com.google.android.material.appbar.MaterialToolbar
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#DDFFFA"
+        android:background="#329F14"
         app:navigationIcon="@drawable/baseline_arrow_back_24"
         app:title="Add Company"
         app:titleCentered="true"

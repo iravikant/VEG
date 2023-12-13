@@ -9,11 +9,22 @@
     tools:context=".ProfileActivity">
 
     <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/back"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:navigationIcon="@drawable/baseline_arrow_back_24"
         app:title="Profile"
-        app:titleCentered="true" />
+        android:background="#329F14"
+        app:titleCentered="true" >
+        <ImageView
+            android:id="@+id/order"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="end"
+            android:layout_marginEnd="15dp"
+            android:padding="5dp"
+            android:src="@drawable/ordr"/>
+    </com.google.android.material.appbar.MaterialToolbar>
 
     <ScrollView
         android:layout_width="match_parent"

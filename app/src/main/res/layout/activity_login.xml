@@ -14,16 +14,6 @@
         android:padding="10dp"
         android:src="@drawable/authentication_rafiki" />
 
-    <com.airbnb.lottie.LottieAnimationView
-        android:id="@+id/SplAni"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_gravity="center"
-        android:scaleType="centerCrop"
-        app:lottie_rawRes="@raw/animation4"
-        app:lottie_autoPlay="true"
-        app:lottie_loop="true"
-        />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/etPhoneLayout"

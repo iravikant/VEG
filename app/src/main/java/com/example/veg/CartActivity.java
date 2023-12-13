@@ -16,6 +16,7 @@ import com.example.veg.models.AddToCartModel;
 import com.example.veg.models.CartListModel;
 import com.example.veg.models.DeleteCartModel;
 import com.example.veg.models.LoginModel;
+import com.example.veg.models.PlaceOrderModel;
 import com.example.veg.models.ProfileModel;
 import com.google.gson.Gson;
 
@@ -55,6 +56,46 @@ public class CartActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(CartActivity.this,WishListActivity.class));
+            }
+        });
+        b.ivPriceInfo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(CartActivity.this,BookingSummaryActivity.class));
+
+            }
+        });
+
+
+        b.placeOrder.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                PlaceOrder();
+            }
+
+            private void PlaceOrder() {
+                Call<PlaceOrderModel> call = RetrofitClient.getInstance().getApi().placeOrder("Bearer" +loginModel.access_token,"Online","1");
+                call.enqueue(new Callback<PlaceOrderModel>() {
+                    @Override
+                    public void onResponse(Call<PlaceOrderModel> call, Response<PlaceOrderModel> response) {
+                        if (response.isSuccessful()) {
+                            Log.e("ravi",new Gson().toJson(response.body()));
+                            Toast.makeText(CartActivity.this, "Order Placed Successfully", Toast.LENGTH_SHORT).show();
+                            SucessFragment dialogueFragment = new SucessFragment();
+                            dialogueFragment.show(getSupportFragmentManager(),"fragment_success");
+
+
+                        }
+
+
+                    }
+
+                    @Override
+                    public void onFailure(Call<PlaceOrderModel> call, Throwable t) {
+                        Toast.makeText(CartActivity.this, t.getMessage(), Toast.LENGTH_SHORT).show();
+                        t.printStackTrace();
+                    }
+                });
             }
         });
     }

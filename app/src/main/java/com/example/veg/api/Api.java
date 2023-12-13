@@ -8,8 +8,11 @@ import com.example.veg.models.DeleteCartModel;
 import com.example.veg.models.EditProfileModel;
 import com.example.veg.models.HomeModel;
 import com.example.veg.models.LoginModel;
+import com.example.veg.models.OrderHistoryModel;
+import com.example.veg.models.PlaceOrderModel;
 import com.example.veg.models.ProfileModel;
 import com.example.veg.models.SignUpModel;
+import com.example.veg.models.SuccessModel;
 import com.example.veg.models.WishlistModel;
 
 import retrofit2.Call;
@@ -80,5 +83,25 @@ public interface Api {
     Call<EditProfileModel> edit(
             @Header("Authorization") String auth
 
+    );
+
+    @FormUrlEncoded
+    @POST("api/order-place")
+    Call<PlaceOrderModel> placeOrder(
+            @Header("Authorization") String auth,
+            @Field("payment_type") String payment_type,
+             @Field("shipping_type_id") String shipping_type_id
+
+    );
+
+    @GET("api/order-success/49")
+    Call<SuccessModel> success(
+            @Header("Authorization") String auth
+
+
+    );
+    @GET("api/order-history")
+    Call<OrderHistoryModel> history(
+            @Header("Authorization") String auth
     );
 }

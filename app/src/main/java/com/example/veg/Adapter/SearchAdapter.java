@@ -44,7 +44,7 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.MyViewHold
 
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.fresh_vegetables, parent, false);
+        View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.products_item, parent, false);
         return new MyViewHolder(itemView);
     }
 

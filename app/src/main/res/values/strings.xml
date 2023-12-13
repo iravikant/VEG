@@ -41,4 +41,6 @@
         <item>Female</item>
         <item>Gotiya_Band</item>
     </string-array>
+    <string name="Quotesa">सबसे सस्ता</string>
+    <string name="Quotesb">सबसे अच्छा</string>
 </resources>

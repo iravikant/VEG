@@ -14,6 +14,7 @@
         android:layout_height="wrap_content"
         app:navigationIcon="@drawable/baseline_arrow_back_24"
         app:title="Edit Profile"
+        android:background="#329F14"
         app:titleCentered="true"
         app:titleTextColor="@color/black" />
 

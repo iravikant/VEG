@@ -12,6 +12,7 @@ import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.example.veg.api.RetrofitClient;
+import com.example.veg.databinding.ActivityProfileBinding;
 import com.example.veg.models.LoginModel;
 import com.example.veg.models.ProfileModel;
 import com.google.android.material.button.MaterialButton;
@@ -22,11 +23,12 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class ProfileActivity extends AppCompatActivity {
-ImageView ivProfile;
+ImageView ivProfile,order;
 TextView tvName,tvPhone,tvEmail,tvAge,tvGender,tvAddress;
 MaterialButton mbEdit;
 SessionManager sessionManager;
 LoginModel loginModel;
+ActivityProfileBinding b;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,6 +42,8 @@ LoginModel loginModel;
         tvPhone = findViewById(R.id.tvPhone);
         tvAddress = findViewById(R.id.tvAddress);
         ivProfile = findViewById(R.id.ivProfile);
+        order = findViewById(R.id.order);
+
         mbEdit = findViewById(R.id.mbEdit);
               getProfile();
 
@@ -48,6 +52,12 @@ LoginModel loginModel;
                   @Override
                   public void onClick(View view) {
                       startActivity(new Intent(ProfileActivity.this,EditProfileActivity.class));
+                  }
+              });
+              order.setOnClickListener(new View.OnClickListener() {
+                  @Override
+                  public void onClick(View view) {
+                      startActivity(new Intent(ProfileActivity.this,OrderHistoryActivity.class));
                   }
               });
     }
@@ -72,7 +82,6 @@ LoginModel loginModel;
                    Glide.with(ProfileActivity.this).load(response.body().user.img).into(ivProfile);
                 }
             }
-
             @Override
             public void onFailure(Call<ProfileModel> call, Throwable t) {
                 Toast.makeText(ProfileActivity.this, t.getMessage(), Toast.LENGTH_SHORT).show();

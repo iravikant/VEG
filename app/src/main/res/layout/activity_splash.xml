@@ -9,19 +9,55 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <LinearLayout
+    <RelativeLayout
         android:id="@+id/splLayout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:orientation="horizontal">
-
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="bottom"
+        android:orientation="vertical">
         <com.airbnb.lottie.LottieAnimationView
             android:id="@+id/SplAni"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:scaleType="fitXY"
+            android:layout_gravity="center"
             app:lottie_autoPlay="true"
             app:lottie_loop="true"
-            app:lottie_rawRes="@raw/veg" />
-    </LinearLayout>
+            app:lottie_rawRes="@raw/bg">
+
+        </com.airbnb.lottie.LottieAnimationView>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/SplAni"
+            android:layout_marginTop="-65dp"
+            android:background="@drawable/rectangle_98">
+
+            <TextView
+                android:id="@+id/tvQuotesa"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:fontFamily="@font/tillana_extrabold"
+                android:gravity="center"
+                android:layout_marginEnd="90dp"
+                android:text="@string/Quotesa"
+                android:textColor="#FFFFFF"
+                android:textSize="30dp" />
+
+            <TextView
+                android:id="@+id/tvQuotesb"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvQuotesa"
+                android:layout_marginStart="90dp"
+                android:fontFamily="@font/tillana_extrabold"
+                android:gravity="center"
+                android:text="@string/Quotesb"
+                android:textColor="#FFFFFF"
+                android:textSize="30dp" />
+        </RelativeLayout>
+
+    </RelativeLayout>
 </LinearLayout>

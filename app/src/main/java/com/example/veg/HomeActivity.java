@@ -68,6 +68,7 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
+
     getProfile();
         home();
         banner();

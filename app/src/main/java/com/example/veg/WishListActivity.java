@@ -33,7 +33,14 @@ public class WishListActivity extends AppCompatActivity {
         sessionManager = new SessionManager(WishListActivity.this);
         loginModel = sessionManager.getLoginSession();
         addWishlist();
+        b.back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onBackPressed();
+            }
+        });
     }
+
 
     private void addWishlist() {
         Call<WishlistModel> call = RetrofitClient.getInstance().getApi().add("Bearer " + loginModel.access_token, "1");
